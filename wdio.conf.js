@@ -16,19 +16,19 @@ exports.config = {
         'goog:chromeOptions': {
             args: ['headless', 'disable-gpu']
         }
-    },
+   /* },
     {
         maxInstances: 5,
         browserName: 'firefox',
         acceptInsecureCerts: true,
         'moz:firefoxOptions': {
             args: ['-headless']
-        }
+        } */
     }
 ],
     logLevel: 'error',
     bail: 0,
-    baseUrl: 'https://e629ed6b-4969-442b-987e-087e81eb10ca.serverhub.practicum-services.com',
+    baseUrl: 'https://cnt-5caee0c0-0285-4222-b2cc-03a2f9405035.containerhub.tripleten-services.com',
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
