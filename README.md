@@ -42,6 +42,11 @@ The automated tests cover the following user interactions:
     cd projects        # change directory into the new projects folder
  2. Clone the Repo 
     git clone git@github.com:username/hm08-qa-us.git
-3. Run automated asychronus tests
-    use npm run wdio in terminal to perform tasks
+ 3. Run command npm install in the terminal.
+ 
+## How to run the project
+    1. Start New Server
+    2. Copy paste server link into configuration file wdio.conf.js
+    3. Run automated asychronus tests:
+    * Use command npm run wdio in terminal to perform tasks
  

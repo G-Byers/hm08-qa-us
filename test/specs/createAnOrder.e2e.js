@@ -2,6 +2,19 @@ const page = require('../../page');
 const helper = require('../../helper')
 
 describe('Create an order', () => {
+    it('Should Input Addresses', async () => {
+        await browser.url(`/`)
+        await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
+        await expect(await $(page.fromField)).toHaveValue('East 2nd Street, 601');
+        await expect(await $(page.toField)).toHaveValue('1300 1st St');
+    })
+    it('Should select supportive plan', async () => {
+        await browser.url(`/`)
+        await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
+        const selectSupportivePlan = await page.selectSupportivePlan ();
+        await expect(selectSupportivePlan.parentElement()).toHaveElementClass('active');
+    })
+    
     it('should open phone number modal', async () => {
         await browser.url(`/`)
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
@@ -20,18 +33,6 @@ describe('Create an order', () => {
         await expect(await helper.getElementByText(phoneNumber)).toBeExisting();
     })
     
-    it('Should Input Addresses', async () => {
-        await browser.url(`/`)
-        await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
-        await expect(await $(page.fromField)).toHaveValue('East 2nd Street, 601');
-        await expect(await $(page.toField)).toHaveValue('1300 1st St');
-    })
-    it('Should select supportive plan', async () => {
-        await browser.url(`/`)
-        await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
-        const selectSupportivePlan = await page.selectSupportivePlan ();
-        await expect(selectSupportivePlan.parentElement()).toHaveElementClass('active');
-    })
     it('should add credit card', async () => {
         await browser.url(`/`)
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
