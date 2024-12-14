@@ -72,7 +72,6 @@ describe('Create an order', () => {
         await browser.url(`/`)
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
         await page.sendOrder();
-        await browser.pause(40000)
         await expect(await $(page.driverModal)).toBeExisting();
     })
 })
